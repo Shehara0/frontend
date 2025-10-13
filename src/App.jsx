@@ -25,6 +25,7 @@ import EditCourse from './pages/instructor/EditCourse';
 import InstructorCourseDetails from './pages/instructor/CourseDetails';
 import UploadContent from './pages/instructor/UploadContent';
 import EnrolledStudents from './pages/instructor/EnrolledStudents';
+import Checkout from './pages/student/Checkout';
 
 // Admin Pages
 import AdminDashboard from './pages/admin/AdminDashboard';
@@ -41,7 +42,7 @@ function App() {
       <Router>
         <div className="App">
           <Navbar />
-          <main className="main-content">
+          <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
             <Routes>
               {/* Public Routes */}
               <Route path="/" element={<Home />} />
@@ -78,6 +79,14 @@ function App() {
                 element={
                   <ProtectedRoute allowedRoles={['Student']}>
                     <CourseDetails />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/student/checkout/:courseId" 
+                element={
+                  <ProtectedRoute allowedRoles={['Student']}>
+                    <Checkout />
                   </ProtectedRoute>
                 } 
               />
