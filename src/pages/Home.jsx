@@ -7,10 +7,10 @@ export default function Home() {
 
     return (
         <div>
-            <section className="relative overflow-hidden bg-gradient-to-b from-sky-50 to-white">
+            <section className="relative overflow-hidden bg-gradient-to-b from-sky-50 to-blue-50">
                 <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
                     <div className="mx-auto max-w-3xl text-center">
-                        <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Welcome to LMS Platform</h1>
+                        <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Welcome to E-Learning Platform</h1>
                         <p className="mt-5 text-lg leading-8 text-gray-600">Learn, Teach, and Grow Together</p>
 
                         {!isAuthenticated ? (

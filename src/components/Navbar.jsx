@@ -16,7 +16,7 @@ export default function Navbar() {
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16 items-center justify-between">
                     <div className="flex items-center gap-3">
-                        <Link to="/" className="text-xl font-semibold text-sky-700">LMS Platform</Link>
+                        <Link to="/" className="text-xl font-semibold text-sky-700">E-Learnig Platform</Link>
                     </div>
                     <div className="flex items-center gap-4">
                         {!isAuthenticated ? (

@@ -44,163 +44,38 @@ function App() {
           <Navbar />
           <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
             <Routes>
-              {/* Public Routes */}
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
+              
+              <Route path="/" element={<Home/>}/>
+              <Route path="/login" element={<Login/>}/>
+              <Route path="/register" element={<Register/>}/>
 
               {/* Student Routes */}
-              <Route 
-                path="/student/dashboard" 
-                element={
-                  <ProtectedRoute allowedRoles={['Student']}>
-                    <StudentDashboard />
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/student/browse-courses" 
-                element={
-                  <ProtectedRoute allowedRoles={['Student']}>
-                    <BrowseCourses />
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/student/my-courses" 
-                element={
-                  <ProtectedRoute allowedRoles={['Student']}>
-                    <MyCourses />
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/student/course/:courseId" 
-                element={
-                  <ProtectedRoute allowedRoles={['Student']}>
-                    <CourseDetails />
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/student/checkout/:courseId" 
-                element={
-                  <ProtectedRoute allowedRoles={['Student']}>
-                    <Checkout />
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/student/my-payments" 
-                element={
-                  <ProtectedRoute allowedRoles={['Student']}>
-                    <MyPayments />
-                  </ProtectedRoute>
-                } 
-              />
+              <Route path="/student/dashboard" element={<ProtectedRoute allowedRoles={['Student']}><StudentDashboard/></ProtectedRoute>}/>
+              <Route path="/student/browse-courses" element={<ProtectedRoute allowedRoles={['Student']}><BrowseCourses/></ProtectedRoute>}/>
+              <Route path="/student/my-courses" element={<ProtectedRoute allowedRoles={['Student']}><MyCourses/></ProtectedRoute>}/>
+              <Route path="/student/course/:courseId" element={<ProtectedRoute allowedRoles={['Student']}><CourseDetails/></ProtectedRoute>}/>
+              <Route path="/student/checkout/:courseId" element={<ProtectedRoute allowedRoles={['Student']}><Checkout/></ProtectedRoute>}/>
+              <Route path="/student/my-payments" element={<ProtectedRoute allowedRoles={['Student']}><MyPayments/></ProtectedRoute>}/>
 
               {/* Instructor Routes */}
-              <Route 
-                path="/instructor/dashboard" 
-                element={
-                  <ProtectedRoute allowedRoles={['Instructor']}>
-                    <InstructorDashboard />
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/instructor/create-course" 
-                element={
-                  <ProtectedRoute allowedRoles={['Instructor']}>
-                    <CreateCourse />
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/instructor/my-courses" 
-                element={
-                  <ProtectedRoute allowedRoles={['Instructor']}>
-                    <InstructorMyCourses />
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/instructor/edit-course/:courseId" 
-                element={
-                  <ProtectedRoute allowedRoles={['Instructor']}>
-                    <EditCourse />
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/instructor/course/:courseId" 
-                element={
-                  <ProtectedRoute allowedRoles={['Instructor']}>
-                    <InstructorCourseDetails />
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/instructor/upload-content/:courseId" 
-                element={
-                  <ProtectedRoute allowedRoles={['Instructor']}>
-                    <UploadContent />
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/instructor/enrolled-students/:courseId" 
-                element={
-                  <ProtectedRoute allowedRoles={['Instructor']}>
-                    <EnrolledStudents />
-                  </ProtectedRoute>
-                } 
-              />
+              <Route path="/instructor/dashboard" element={<ProtectedRoute allowedRoles={['Instructor']}> <InstructorDashboard/></ProtectedRoute>}/>
+              <Route path="/instructor/create-course" element={<ProtectedRoute allowedRoles={['Instructor']}><CreateCourse/></ProtectedRoute>}/>
+              <Route path="/instructor/my-courses" element={<ProtectedRoute allowedRoles={['Instructor']}><InstructorMyCourses/></ProtectedRoute>}/>
+              <Route path="/instructor/edit-course/:courseId"  element={<ProtectedRoute allowedRoles={['Instructor']}><EditCourse/></ProtectedRoute>}/>
+              <Route path="/instructor/course/:courseId" element={<ProtectedRoute allowedRoles={['Instructor']}><InstructorCourseDetails/></ProtectedRoute>}/>
+              <Route path="/instructor/upload-content/:courseId" element={<ProtectedRoute allowedRoles={['Instructor']}><UploadContent/></ProtectedRoute>}/>
+              <Route path="/instructor/enrolled-students/:courseId" element={<ProtectedRoute allowedRoles={['Instructor']}><EnrolledStudents/></ProtectedRoute>}/>
 
               {/* Admin Routes */}
-              <Route 
-                path="/admin/dashboard" 
-                element={
-                  <ProtectedRoute allowedRoles={['Admin']}>
-                    <AdminDashboard />
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/admin/pending-courses" 
-                element={
-                  <ProtectedRoute allowedRoles={['Admin']}>
-                    <PendingCourses />
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/admin/all-users" 
-                element={
-                  <ProtectedRoute allowedRoles={['Admin']}>
-                    <AllUsers />
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/admin/all-courses" 
-                element={
-                  <ProtectedRoute allowedRoles={['Admin']}>
-                    <AllCourses />
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/admin/reports" 
-                element={
-                  <ProtectedRoute allowedRoles={['Admin']}>
-                    <Reports />
-                  </ProtectedRoute>
-                } 
-              />
+              <Route path="/admin/dashboard" element={<ProtectedRoute allowedRoles={['Admin']}><AdminDashboard/></ProtectedRoute>}/>
+              <Route path="/admin/pending-courses"  element={<ProtectedRoute allowedRoles={['Admin']}><PendingCourses/></ProtectedRoute>}/>
+              <Route path="/admin/all-users"  element={<ProtectedRoute allowedRoles={['Admin']}><AllUsers/></ProtectedRoute>}/>
+              <Route path="/admin/all-courses" element={<ProtectedRoute allowedRoles={['Admin']}><AllCourses /> </ProtectedRoute>}/>
+              <Route path="/admin/reports" element={<ProtectedRoute allowedRoles={['Admin']}><Reports /> </ProtectedRoute>}/>
 
               {/* Catch all - redirect to home */}
               <Route path="*" element={<Navigate to="/" />} />
+              
             </Routes>
           </main>
           <Footer/>

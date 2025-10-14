@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Navigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 
-function ProtectedRoute({ children, allowedRoles }) {
+export default function ProtectedRoute({ children, allowedRoles }) {
     const { user, isAuthenticated } = useContext(AuthContext);
 
     if (!isAuthenticated) {
@@ -15,5 +15,3 @@ function ProtectedRoute({ children, allowedRoles }) {
 
     return children;
 }
-
-export default ProtectedRoute;
