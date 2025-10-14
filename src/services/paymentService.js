@@ -1,4 +1,4 @@
-import api from './api';
+ import api from './api';
 
 const paymentService = {
     // Make payment (Student)
@@ -26,4 +26,4 @@ const paymentService = {
     }
 };
 
-export default paymentService;
+export default paymentService;   
