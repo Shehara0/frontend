@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import paymentService from '../../services/paymentService';
 import LoadingSpinner from '../../components/LoadingSpinner';
 
-function MyPayments() {
+export default function MyPayments() {
     const [payments, setPayments] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -99,5 +99,3 @@ function MyPayments() {
         </div>
     );
 }
-
-export default MyPayments;

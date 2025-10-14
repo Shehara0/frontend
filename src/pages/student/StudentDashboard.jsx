@@ -4,7 +4,7 @@ import { AuthContext } from '../../context/AuthContext';
 import enrollmentService from '../../services/enrollmentService';
 import LoadingSpinner from '../../components/LoadingSpinner';
 
-function StudentDashboard() {
+export default function StudentDashboard() {
     const { user } = useContext(AuthContext);
     const [enrollments, setEnrollments] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -47,7 +47,7 @@ function StudentDashboard() {
             <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
                     <div className="text-3xl font-bold text-gray-900">{enrollments.length}</div>
-                    <div className="mt-1 text-sm text-gray-600">Enrolled Courses</div>
+                    <div className="mt-1 text-sm text-gray-600"  hover:bg-black>Enrolled Courses</div>
                 </div>
                 <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
                     <div className="text-3xl font-bold text-gray-900">{enrollments.filter(e => e.paymentStatus === 'paid').length}</div>
@@ -93,5 +93,3 @@ function StudentDashboard() {
         </div>
     );
 }
-
-export default StudentDashboard;

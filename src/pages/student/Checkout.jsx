@@ -4,7 +4,7 @@ import courseService from '../../services/courseService';
 import paymentService from '../../services/paymentService';
 import LoadingSpinner from '../../components/LoadingSpinner';
 
-function Checkout() {
+export default function Checkout() {
     const { courseId } = useParams();
     const navigate = useNavigate();
 
@@ -177,6 +177,4 @@ function Checkout() {
         </div>
     );
 }
-
-export default Checkout;
 

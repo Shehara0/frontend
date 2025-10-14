@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import enrollmentService from '../../services/enrollmentService';
 import LoadingSpinner from '../../components/LoadingSpinner';
 
-function MyCourses() {
+export default function MyCourses() {
     const [enrollments, setEnrollments] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -103,5 +103,3 @@ function MyCourses() {
         </div>
     );
 }
-
-export default MyCourses;

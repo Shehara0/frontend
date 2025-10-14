@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function CourseCard({ course }) {
+export default function CourseCard({ course }) {
     const navigate = useNavigate();
 
     const handleViewCourse = () => {
@@ -22,5 +22,3 @@ function CourseCard({ course }) {
         </div>
     );
 }
-
-export default CourseCard;

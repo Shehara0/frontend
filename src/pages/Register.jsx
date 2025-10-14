@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 
-function Register() {
+export default function Register() {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -85,21 +85,6 @@ function Register() {
                         />
                     </div>
 
-                  {/*  <div>
-                        <label className="block text-sm font-medium text-gray-700">Role</label>
-                        <select
-                            name="role"
-                            value={formData.role}
-                            onChange={handleChange}
-                            className="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-900 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
-                        >
-                            <option value="Student">Student</option>
-                            <option value="Instructor">Instructor</option>
-                            <option value="Admin">Admin</option>
-                        </select>
-                    </div>
-                    */}
-
                     <button type="submit" disabled={loading} className="inline-flex w-full items-center justify-center rounded-md bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-700 disabled:opacity-50">
                         {loading ? 'Registering...' : 'Register'}
                     </button>
@@ -112,5 +97,3 @@ function Register() {
         </div>
     );
 }
-
-export default Register;

@@ -6,7 +6,7 @@ import paymentService from '../../services/paymentService';
 import enrollmentService from '../../services/enrollmentService';
 import LoadingSpinner from '../../components/LoadingSpinner';
 
-function CourseDetails() {
+export default function CourseDetails() {
     const { courseId } = useParams();
     const navigate = useNavigate();
     
@@ -237,5 +237,3 @@ function CourseDetails() {
         </div>
     );
 }
-
-export default CourseDetails;

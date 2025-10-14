@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 
-function Login() {
+export default function Login() {
     const [formData, setFormData] = useState({
         email: '',
         password: ''
@@ -88,5 +88,3 @@ function Login() {
         </div>
     );
 }
-
-export default Login;

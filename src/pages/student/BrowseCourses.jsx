@@ -3,7 +3,7 @@ import courseService from '../../services/courseService';
 import CourseCard from '../../components/CourseCard';
 import LoadingSpinner from '../../components/LoadingSpinner';
 
-function BrowseCourses() {
+export default function BrowseCourses() {
     const [courses, setCourses] = useState([]);
     const [loading, setLoading] = useState(true);
     const [searchTerm, setSearchTerm] = useState('');
@@ -73,5 +73,3 @@ function BrowseCourses() {
         </div>
     );
 }
-
-export default BrowseCourses;

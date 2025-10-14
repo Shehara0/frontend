@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 
-function Home() {
+export default function Home() {
     const { isAuthenticated, user } = useContext(AuthContext);
 
     return (
@@ -54,5 +54,3 @@ function Home() {
         </div>
     );
 }
-
-export default Home;
