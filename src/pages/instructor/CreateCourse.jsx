@@ -97,12 +97,12 @@ function CreateCourse() {
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600"
                     >
                         <option value="">Select Category</option>
-                        <option value="Computer Science">Computer Science</option>
-                        <option value="Business">Business</option>
-                        <option value="Design">Design</option>
-                        <option value="Marketing">Marketing</option>
-                        <option value="Mathematics">Mathematics</option>
-                        <option value="Science">Science</option>
+                        <option value="Computer Science">Science</option>
+                        <option value="Business">Mathematics</option>
+                        <option value="Design">History</option>
+                        <option value="Marketing">Econ</option>
+                        <option value="Mathematics">Commerce</option>
+                        <option value="Science">Ict</option>
                         <option value="Other">Other</option>
                     </select>
                 </div>

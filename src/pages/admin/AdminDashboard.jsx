@@ -121,27 +121,23 @@ function AdminDashboard() {
             <div>
                 <h2 className="text-2xl font-bold text-gray-800 mb-4">Quick Actions</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <Link 
-                        to="/admin/pending-courses" 
+                    <Link to="/admin/pending-courses" 
                         className="bg-yellow-500 text-white p-6 rounded-lg shadow-md hover:shadow-lg hover:bg-yellow-600 transition text-center"
                     >
                         <p className="text-2xl font-bold mb-2">{dashboardData?.courses?.pending}</p>
                         <p className="font-semibold">Pending Courses</p>
                     </Link>
-                    <Link 
-                        to="/admin/all-users" 
+                    <Link to="/admin/all-users" 
                         className="bg-indigo-500 text-white p-6 rounded-lg shadow-md hover:shadow-lg hover:bg-indigo-600 transition text-center"
                     >
                         <p className="font-semibold">View All Users</p>
                     </Link>
-                    <Link 
-                        to="/admin/all-courses" 
+                    <Link to="/admin/all-courses" 
                         className="bg-purple-500 text-white p-6 rounded-lg shadow-md hover:shadow-lg hover:bg-purple-600 transition text-center"
                     >
                         <p className="font-semibold">View All Courses</p>
                     </Link>
-                    <Link 
-                        to="/admin/reports" 
+                    <Link to="/admin/reports" 
                         className="bg-green-500 text-white p-6 rounded-lg shadow-md hover:shadow-lg hover:bg-green-600 transition text-center"
                     >
                         <p className="font-semibold">View Reports</p>

@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-// In Vite, environment variables are exposed via import.meta.env and must be prefixed with VITE_
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001/api';
 
 // Create axios instance
