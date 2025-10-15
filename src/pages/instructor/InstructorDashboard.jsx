@@ -10,13 +10,35 @@ function InstructorDashboard() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetchCourses();
-    }, []);
+        if (user) {
+            fetchCourses();
+        }
+    }, [user]);
 
     const fetchCourses = async () => {
         try {
             const data = await courseService.getAllCourses();
-            const myCourses = data.filter(course => course.instructorId?._id === user?._id);
+            
+            // Try multiple matching strategies
+            const myCourses = data.filter(course => {
+                // Strategy 1: Compare _id as strings
+                if (course.instructorId?._id && user?._id) {
+                    return String(course.instructorId._id) === String(user._id);
+                }
+                
+                // Strategy 2: Compare emails
+                if (course.instructorId?.email && user?.email) {
+                    return course.instructorId.email === user.email;
+                }
+                
+                // Strategy 3: If instructorId is just a string (not populated)
+                if (typeof course.instructorId === 'string' && user?._id) {
+                    return course.instructorId === user._id;
+                }
+                
+                return false;
+            });
+            
             setCourses(myCourses);
         } catch (error) {
             console.error('Error fetching courses:', error);
@@ -80,7 +102,13 @@ function InstructorDashboard() {
                 <h2 className="text-2xl font-bold text-gray-800 mb-4">Recent Courses</h2>
                 {courses.length === 0 ? (
                     <div className="bg-white rounded-lg shadow-md p-8 text-center">
-                        <p className="text-gray-600">You haven't created any courses yet.</p>
+                        <p className="text-gray-600 mb-4">You haven't created any courses yet.</p>
+                        <Link 
+                            to="/instructor/create-course"
+                            className="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition"
+                        >
+                            Create Your First Course
+                        </Link>
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
