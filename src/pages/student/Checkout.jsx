@@ -94,7 +94,7 @@ export default function Checkout() {
                                 onChange={(e) => setNameOnCard(e.target.value)}
                                 required
                                 className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
-                                placeholder="Jane Doe"
+                                placeholder="Visa"
                             />
                         </div>
                         <div>
