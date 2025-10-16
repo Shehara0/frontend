@@ -39,15 +39,17 @@ export default function StudentDashboard() {
 
     return (
         <div className="space-y-8">
+            {/* Welcome Section */}
             <div>
                 <h1 className="text-2xl font-semibold text-gray-900">Welcome, {user?.name}!</h1>
                 <p className="mt-1 text-gray-600">Student Dashboard</p>
             </div>
 
+            {/* Statistics Cards */}
             <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
                     <div className="text-3xl font-bold text-gray-900">{enrollments.length}</div>
-                    <div className="mt-1 text-sm text-gray-600"  hover:bg-black>Enrolled Courses</div>
+                    <div className="mt-1 text-sm text-gray-600">Enrolled Courses</div>
                 </div>
                 <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
                     <div className="text-3xl font-bold text-gray-900">{enrollments.filter(e => e.paymentStatus === 'paid').length}</div>
@@ -55,15 +57,23 @@ export default function StudentDashboard() {
                 </div>
             </div>
 
+            {/* Quick Actions */}
             <div>
                 <h2 className="text-lg font-semibold text-gray-900">Quick Actions</h2>
                 <div className="mt-4 flex flex-wrap gap-3">
-                    <Link to="/student/browse-courses" className="rounded-md bg-sky-600 px-4 py-2 text-sm font-medium text-white hover:bg-sky-700">Browse Courses</Link>
-                    <Link to="/student/my-courses" className="rounded-md px-4 py-2 text-sm font-medium text-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-gray-50">My Courses</Link>
-                    <Link to="/student/my-payments" className="rounded-md px-4 py-2 text-sm font-medium text-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-gray-50">Payment History</Link>
+                    <Link to="/student/browse-courses" className="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
+                        Browse Courses
+                    </Link>
+                    <Link to="/student/my-courses" className="rounded-md px-4 py-2 text-sm font-medium text-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                        My Courses
+                    </Link>
+                    <Link to="/student/my-payments" className="rounded-md px-4 py-2 text-sm font-medium text-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                        Payment History
+                    </Link>
                 </div>
             </div>
 
+            {/* Recent Courses */}
             <div>
                 <h2 className="text-lg font-semibold text-gray-900">My Recent Courses</h2>
                 {enrollments.length === 0 ? (
@@ -80,7 +90,7 @@ export default function StudentDashboard() {
                                     </span>
                                     <Link 
                                         to={`/student/course/${enrollment.courseId?.courseId || enrollment.courseId?._id}`}
-                                        className="rounded-md bg-sky-600 px-3 py-2 text-sm font-medium text-white hover:bg-sky-700"
+                                        className="inline-block bg-indigo-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-indigo-700 transition"
                                     >
                                         View Course
                                     </Link>

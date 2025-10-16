@@ -26,7 +26,7 @@ export default function BrowseCourses() {
 
     const filteredCourses = courses.filter(course => {
         const matchesSearch = course.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                            course.description.toLowerCase().includes(searchTerm.toLowerCase());
+                              course.description.toLowerCase().includes(searchTerm.toLowerCase());
         const matchesCategory = category === 'All' || course.category === category;
         return matchesSearch && matchesCategory;
     });
@@ -37,10 +37,15 @@ export default function BrowseCourses() {
 
     return (
         <div className="space-y-6">
+            {/* Header with Button */}
             <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                 <h1 className="text-2xl font-semibold text-gray-900">Browse Courses</h1>
+                <button className="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
+                    View All Courses
+                </button>
             </div>
 
+            {/* Search and Category Filter */}
             <div className="flex flex-col gap-3 sm:flex-row">
                 <input
                     type="text"
@@ -61,9 +66,12 @@ export default function BrowseCourses() {
                 </select>
             </div>
 
+            {/* Courses Grid */}
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {filteredCourses.length === 0 ? (
-                    <div className="rounded-2xl border border-gray-200 bg-white p-8 text-center text-gray-600 shadow-sm">No courses found.</div>
+                    <div className="rounded-2xl border border-gray-200 bg-white p-8 text-center text-gray-600 shadow-sm">
+                        No courses found.
+                    </div>
                 ) : (
                     filteredCourses.map(course => (
                         <CourseCard key={course._id} course={course} />
