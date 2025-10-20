@@ -19,7 +19,7 @@ export default function CourseCard({ course }) {
                     onClick={handleViewCourse}
                     className="inline-block bg-indigo-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-indigo-700 transition"
                 >
-                    View Details
+                    View Course Details 
                 </button>
             </div>
         </div>
