@@ -19,19 +19,16 @@ function InstructorDashboard() {
         try {
             const data = await courseService.getAllCourses();
             
-            // Try multiple matching strategies
             const myCourses = data.filter(course => {
-                // Strategy 1: Compare _id as strings
+
                 if (course.instructorId?._id && user?._id) {
                     return String(course.instructorId._id) === String(user._id);
                 }
                 
-                // Strategy 2: Compare emails
                 if (course.instructorId?.email && user?.email) {
                     return course.instructorId.email === user.email;
                 }
-                
-                // Strategy 3: If instructorId is just a string (not populated)
+
                 if (typeof course.instructorId === 'string' && user?._id) {
                     return course.instructorId === user._id;
                 }
@@ -58,7 +55,6 @@ function InstructorDashboard() {
             <h1 className="text-4xl font-bold text-gray-800 mb-2">Welcome, {user?.name}!</h1>
             <p className="text-gray-600 mb-8">Instructor Dashboard</p>
 
-            {/* Dashboard Stats */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                 <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
                     <h3 className="text-3xl font-bold text-indigo-600">{courses.length}</h3>
@@ -78,7 +74,7 @@ function InstructorDashboard() {
                 </div>
             </div>
 
-            {/* Quick Actions */}
+          
             <div className="mb-8">
                 <h2 className="text-2xl font-bold text-gray-800 mb-4">Quick Actions</h2>
                 <div className="flex flex-wrap gap-4">
@@ -97,7 +93,7 @@ function InstructorDashboard() {
                 </div>
             </div>
 
-            {/* Recent Courses */}
+            
             <div>
                 <h2 className="text-2xl font-bold text-gray-800 mb-4">Recent Courses</h2>
                 {courses.length === 0 ? (

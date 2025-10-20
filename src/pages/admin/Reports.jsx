@@ -36,7 +36,7 @@ function Reports() {
         <div className="max-w-7xl mx-auto px-4 py-8">
             <h1 className="text-4xl font-bold text-gray-800 mb-8">Reports & Analytics</h1>
 
-            {/* Top Enrolled Courses */}
+            
             <div className="bg-white rounded-lg shadow-md p-8 mb-8">
                 <h2 className="text-2xl font-bold text-gray-800 mb-6">Top 10 Enrolled Courses</h2>
                 <div className="overflow-x-auto">
@@ -80,7 +80,7 @@ function Reports() {
                 </div>
             </div>
 
-            {/* Revenue by Course */}
+            
             <div className="bg-white rounded-lg shadow-md p-8 mb-8">
                 <h2 className="text-2xl font-bold text-gray-800 mb-6">Revenue by Course</h2>
                 <div className="overflow-x-auto">
@@ -117,9 +117,9 @@ function Reports() {
                 </div>
             </div>
 
-            {/* Recent Activities */}
+            
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {/* Recent Enrollments */}
+                
                 <div className="bg-white rounded-lg shadow-md p-8">
                     <h2 className="text-2xl font-bold text-gray-800 mb-6">Recent Enrollments</h2>
                     <div className="space-y-4">
@@ -137,7 +137,7 @@ function Reports() {
                     </div>
                 </div>
 
-                {/* Recent Payments */}
+               
                 <div className="bg-white rounded-lg shadow-md p-8">
                     <h2 className="text-2xl font-bold text-gray-800 mb-6">Recent Payments</h2>
                     <div className="space-y-4">

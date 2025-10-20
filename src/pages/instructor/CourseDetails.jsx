@@ -44,7 +44,7 @@ function InstructorCourseDetails() {
 
     return (
         <div className="max-w-7xl mx-auto px-4 py-8">
-            {/* Course Header */}
+            
             <div className="bg-white rounded-lg shadow-md p-8 mb-6">
                 <div className="flex justify-between items-start mb-4">
                     <h1 className="text-4xl font-bold text-gray-800">{course?.title}</h1>
@@ -77,7 +77,7 @@ function InstructorCourseDetails() {
                     <p className="text-gray-700 leading-relaxed">{course?.description}</p>
                 </div>
 
-                {/* Action Buttons */}
+               
                 <div className="flex flex-wrap gap-4">
                     <Link 
                         to={`/instructor/edit-course/${course?.courseId}`}
@@ -100,7 +100,7 @@ function InstructorCourseDetails() {
                 </div>
             </div>
 
-            {/* Course Materials */}
+           
             <div className="bg-white rounded-lg shadow-md p-8">
                 <h2 className="text-2xl font-bold text-gray-800 mb-6">
                     Course Materials ({contents.length})

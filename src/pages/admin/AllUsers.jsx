@@ -102,9 +102,7 @@ function AllUsers() {
                                             {user.role}
                                         </span>
                                     </td>
-                                    {/* <td className="px-6 py-4 text-gray-600">
-                                        {new Date(user.createdAt).toLocaleDateString()} 
-                                    </td> */}
+                                    
                                 </tr>
                             ))}
                         </tbody>

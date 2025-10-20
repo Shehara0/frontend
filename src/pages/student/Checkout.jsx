@@ -19,7 +19,7 @@ export default function Checkout() {
 
     const [isProcessing, setIsProcessing] = useState(false);
     const [progress, setProgress] = useState(0);
-    const [result, setResult] = useState(null); // success | failed
+    const [result, setResult] = useState(null); 
 
     useEffect(() => {
         const run = async () => {
@@ -45,7 +45,7 @@ export default function Checkout() {
         setProgress(0);
         setResult(null);
 
-        // Fake progress animation 0 -> 100 over ~2s
+        
         const start = Date.now();
         const timer = setInterval(() => {
             const pct = Math.min(100, Math.round((Date.now() - start) / 20));
@@ -53,7 +53,7 @@ export default function Checkout() {
         }, 40);
 
         try {
-            // Simulated payment with backend enrollment
+            
             const response = await paymentService.makePayment({
                 courseId: course._id,
                 paymentMethod: 'card',

@@ -35,7 +35,7 @@ function EnrolledStudents() {
             <h1 className="text-4xl font-bold text-gray-800 mb-2">Enrolled Students</h1>
             <h2 className="text-2xl text-gray-600 mb-8">{course?.title}</h2>
 
-            {/* Stats */}
+            
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                 <div className="bg-white rounded-lg shadow-md p-6">
                     <h3 className="text-3xl font-bold text-indigo-600">{enrollments.length}</h3>
@@ -55,7 +55,7 @@ function EnrolledStudents() {
                 </div>
             </div>
 
-            {/* Students Table */}
+            
             {enrollments.length === 0 ? (
                 <div className="bg-white rounded-lg shadow-md p-12 text-center">
                     <p className="text-gray-600">No students enrolled yet.</p>

@@ -94,28 +94,7 @@ function AdminDashboard() {
                 </div>
             </div>
 
-            {/* Payment Statistics */}
-            <div className="mb-8">
-                <h2 className="text-2xl font-bold text-gray-800 mb-4">Payment Statistics</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div className="bg-gradient-to-br from-green-500 to-green-600 text-white rounded-lg shadow-lg p-6">
-                        <h3 className="text-4xl font-bold">${dashboardData?.payments?.totalRevenue?.toFixed(2)}</h3>
-                        <p className="mt-2 opacity-90">Total Revenue</p>
-                    </div>
-                    <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
-                        <h3 className="text-3xl font-bold text-green-600">{dashboardData?.payments?.successful}</h3>
-                        <p className="text-gray-600 mt-2">Successful Payments</p>
-                    </div>
-                    <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
-                        <h3 className="text-3xl font-bold text-red-600">{dashboardData?.payments?.failed}</h3>
-                        <p className="text-gray-600 mt-2">Failed Payments</p>
-                    </div>
-                    <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
-                        <h3 className="text-3xl font-bold text-indigo-600">{dashboardData?.payments?.total}</h3>
-                        <p className="text-gray-600 mt-2">Total Transactions</p>
-                    </div>
-                </div>
-            </div>
+            
 
             {/* Quick Actions */}
             <div>
